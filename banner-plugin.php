@@ -12,32 +12,39 @@ Version: 1.0
 Author URI: https://bitnami.com/
 */
 
-// This echoes the message, we'll place it later
-function bitnami_console() {
-	echo "<p id='bitnami-production'>Go to the <a href='https://bitnami.com'>Bitnami Production Console</a> for Advanced Operations</p>";
+
+add_action('admin_bar_menu', 'bitnami_prod_add_bar', 25);
+function bitnami_prod_add_bar($admin_bar){
+    $admin_bar->add_menu( array(
+        'id'    => 'bitnami-prod-console',
+        'title' => 'Bitnami Production Console',
+        'href'  => '#',
+        'meta'  => array(
+            'title' => __('Bitnami Production Console'),            
+        ),
+    ));
+    $admin_bar->add_menu( array(
+        'id'    => 'bitnami-community',
+        'parent' => 'bitnami-prod-console',
+        'title' => 'Bitnami Community',
+        'href'  => 'https://community.bitnami.com',
+        'meta'  => array(
+            'title' => __('Bitnami Community'),
+            'target' => '_blank',
+            'class' => 'bitnami_prod_class'
+        ),
+    ));
+    $admin_bar->add_menu( array(
+        'id'    => 'bitnami-docs',
+        'parent' => 'bitnami-prod-console',
+        'title' => 'Bitnami.com',
+        'href'  => 'https://docs.bitnami.com',
+        'meta'  => array(
+            'title' => __('Bitnami Doc Pages'),
+            'target' => '_blank',
+            'class' => 'bitnami_prod_class'
+        ),
+    ));
 }
-
-// Now we set that function up to execute when the admin_notices action is called
-add_action( 'admin_notices', 'bitnami_console' );
-
-// We need some CSS to position the paragraph
-function bitnami_console_css() {
-	// This makes sure that the positioning is also good for right-to-left languages
-	$x = is_rtl() ? 'left' : 'right';
-
-	echo "
-	<style type='text/css'>
-	#bitnami-production {
-		float: $x;
-		padding-$x: 15px;
-		padding-top: 5px;		
-		margin: 0;
-		font-size: 11px;
-	}
-	</style>
-	";
-}
-
-add_action( 'admin_head', 'bitnami_console_css' );
 
 ?>
