@@ -4,9 +4,9 @@
  * @version 1.0
  */
 /*
-Plugin Name: Bitnami Production Console Helper
+Plugin Name: WordPress Cloud Management Console
 Plugin URI: http://wordpress.org/extend/plugins/hello-dolly/
-Description: This plugin adds a link in the WordPress Admin Interface to the Bitnami Production Console
+Description: This plugin links your Wordpress installation to the Bitnami Production Console to make it easy to backup, upgrade and secure all your Wordpress sites and servers
 Author: Bitnami
 Version: 1.0
 Author URI: https://bitnami.com/
@@ -17,10 +17,10 @@ add_action('admin_bar_menu', 'bitnami_prod_add_bar', 25);
 function bitnami_prod_add_bar($admin_bar){
     $admin_bar->add_menu( array(
         'id'    => 'bitnami-prod-console',
-        'title' => 'Bitnami Production Console',
-        'href'  => '#',
+        'title' => 'WordPress Cloud Management Console',
+        'href'  => 'https://bitnami.com/wordpress-management-console',
         'meta'  => array(
-            'title' => __('Bitnami Production Console'),            
+            'title' => __('WordPress Cloud Management Console'),            
         ),
     ));
     $admin_bar->add_menu( array(
