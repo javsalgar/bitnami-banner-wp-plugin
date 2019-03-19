@@ -6,7 +6,7 @@
 /*
 Plugin Name: WordPress Cloud Management Console
 Plugin URI: http://wordpress.org/extend/plugins/hello-dolly/
-Description: This plugin links your WordPress installation to the WordPress Cloud Management Console to make it easy to backup, upgrade and secure all your WordPress sites and servers
+Description: Links your WordPress installation to the WordPress Cloud Management Console and Support. This Console provides a great user experience for launching and managing all your production WordPress deployments.
 Author: Bitnami
 Version: 1.0
 Author URI: https://bitnami.com/
@@ -24,12 +24,23 @@ function bitnami_prod_add_bar($admin_bar){
         ),
     ));
     $admin_bar->add_menu( array(
-        'id'    => 'bitnami-community',
+        'id'    => 'early-access',
         'parent' => 'bitnami-prod-console',
-        'title' => 'Bitnami Community',
-        'href'  => 'https://community.bitnami.com',
+        'title' => 'Request Early Access',
+        'href'  => 'https://bitnami.com/wordpress-management-console',
         'meta'  => array(
-            'title' => __('Bitnami Community'),
+            'title' => __('Request Early Access'),
+            'target' => '_blank',
+            'class' => 'bitnami_prod_class'
+        ),
+    ));
+    $admin_bar->add_menu( array(
+        'id'    => 'bitnami-support',
+        'parent' => 'bitnami-prod-console',
+        'title' => 'Support',
+        'href'  => 'https://helpdesk.bitnami.com/',
+        'meta'  => array(
+            'title' => __('Support'),
             'target' => '_blank',
             'class' => 'bitnami_prod_class'
         ),
@@ -37,10 +48,10 @@ function bitnami_prod_add_bar($admin_bar){
     $admin_bar->add_menu( array(
         'id'    => 'bitnami-docs',
         'parent' => 'bitnami-prod-console',
-        'title' => 'Bitnami.com',
+        'title' => 'Documentation',
         'href'  => 'https://docs.bitnami.com',
         'meta'  => array(
-            'title' => __('Bitnami Doc Pages'),
+            'title' => __('Documentation'),
             'target' => '_blank',
             'class' => 'bitnami_prod_class'
         ),
