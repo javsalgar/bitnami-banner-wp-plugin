@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Bitnami_Production_Console_Banner
+ * @package WordPress_Cloud_Management_Console
  * @version 1.0
  */
 /*
