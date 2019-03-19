@@ -6,7 +6,7 @@
 /*
 Plugin Name: WordPress Cloud Management Console
 Plugin URI: http://wordpress.org/extend/plugins/hello-dolly/
-Description: This plugin links your Wordpress installation to the Bitnami Production Console to make it easy to backup, upgrade and secure all your Wordpress sites and servers
+Description: This plugin links your WordPress installation to the Bitnami Production Console to make it easy to backup, upgrade and secure all your WordPress sites and servers
 Author: Bitnami
 Version: 1.0
 Author URI: https://bitnami.com/
